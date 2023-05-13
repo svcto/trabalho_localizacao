@@ -74,7 +74,7 @@ class _PrincipalState extends State<Principal> {
     if (_registros.isEmpty) {
       return Center(
         child: Text(
-          'Nenhum registro de registro encontrado',
+          'Nenhum registro encontrado',
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,

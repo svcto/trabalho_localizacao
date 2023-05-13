@@ -17,7 +17,7 @@ class Registro{
 
   String get dataCadastroFormatado{
     DateTime? reg = dataRegistro;
-    String formattedDate = DateFormat('dd/MM/yyyy').format(reg!);
+    String formattedDate = DateFormat('dd/MM/yyyy HH:mm').format(reg!);
     return formattedDate;
   }
 

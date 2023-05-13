@@ -27,7 +27,7 @@ class _PrincipalState extends State<Principal> {
 
   @override
   void initState() {
-    // super.initState();
+    _atualizarLista();
   }
 
   @override
@@ -90,8 +90,18 @@ class _PrincipalState extends State<Principal> {
         itemBuilder: (BuildContext context, int index) {
           final registro = _registros[index];
           return ListTile(
+            onTap: () {
+              final String loc = registro.localizacao
+                  .replaceAll(", ", " ");
+              MapsLauncher.launchCoordinates(
+                  double.parse(loc.split(" ")[1]
+                      .replaceFirst(",", ".")),
+                  double.parse(loc.split(" ")[3]
+                      .replaceFirst(",", ".")));
+
+            },
             title: Text(
-              '${registro.id} - ${registro.dataRegistro}',
+              '${registro.id} - ${registro.dataCadastroFormatado}',
 
             ),
             subtitle: Text(registro.localizacao == null

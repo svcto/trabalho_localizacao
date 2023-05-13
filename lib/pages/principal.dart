@@ -17,8 +17,8 @@ class _PrincipalState extends State<Principal> {
 
   String get _textoLocalizacao =>
       _localizacaoAtual == null ? '' :
-      'Latitude: ${_localizacaoAtual!
-          .latitude}  |  Longetude: ${_localizacaoAtual!.longitude}';
+      'Latitude: ${_localizacaoAtual!.latitude} '
+          ' |  Longitude: ${_localizacaoAtual!.longitude}';
 
 
   final _registros = <Registro>[];
@@ -33,10 +33,10 @@ class _PrincipalState extends State<Principal> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Registro de Registros')),
+      appBar: AppBar(title: Text('Registro digital de ponto')),
       body: _criarBody(),
       floatingActionButton: FloatingActionButton(
-        tooltip: 'Registrar Registro',
+        tooltip: 'Registrar...',
         child: const Icon(Icons.add),
         onPressed: _obterLocalizacaoAtual,
       ),
